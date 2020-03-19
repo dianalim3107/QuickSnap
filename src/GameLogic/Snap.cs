@@ -39,6 +39,8 @@ namespace CardGames.GameLogic
 			_deck = new Deck ();
 			_gameTimer=SwinGame.CreateTimer();
 		}
+		
+		
 
 		/// <summary>
 		/// Gets the card on the top of the "flip" stack. This card will be face up.
@@ -97,6 +99,7 @@ namespace CardGames.GameLogic
 			}
 		}
 			
+			
 		public void FlipNextCard()
 		{
 			if (_deck.CardsRemaining > 0)			// have cards...
@@ -145,6 +148,7 @@ namespace CardGames.GameLogic
 			{
 				_score[player]++;
 				//TODO: consider playing a sound here...
+				SwinGame.PlaySoundEffect("Slap");
 			}
 			else if ( player >= 0 && player < _score.Length)
 			{
